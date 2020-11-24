@@ -1,0 +1,27 @@
+/** Name **/
+$radical-red: #ff3366 !default;
+$torch-red: #FF0040 !default;
+$white: #ffff !default;
+$red-orange: #ff342b !default;
+$silver: #c8c8c8 !default;
+$pastel-green: #59dd6b !default;
+$dove-gray: #6c6c6c !default;
+$black: #000000;
+$wild-sand: #F6F6F6 !default;
+$alto: #DFDFDF !default;
+$wine-berry: #601a2c !default;
+$night-Shadz: #BB3859 !default;
+$gray: #828282 !default;
+
+/** Role **/
+$default-background: $wild-sand !default;
+$primary-dark: $night-Shadz !default;
+$primary-very-dark: $wine-berry !default;
+$primary: $radical-red !default;
+$secondary: $silver !default;
+$info: rgba($dove-gray, 0.85) !default;
+$success: $pastel-green !default;
+$danger: $red-orange !default;
+$light-border: $alto !default;
+$active-item: rgba($silver, 0.5) !default;
+$inactive: $silver !default;
