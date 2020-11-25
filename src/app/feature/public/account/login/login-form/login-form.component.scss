@@ -1,0 +1,19 @@
+@import "../../../../../../sass/abstracts/mixins";
+@import "../../../../../../sass/abstracts/colors";
+
+.login-form {
+  @include verticalCenter;
+  width: 100%;
+  &__form-control {
+    height: 3.8rem;
+    font-size: 1.6rem !important;
+    border-radius: 2.5rem !important;
+  }
+  &__form-item {
+    margin-bottom: 3rem;
+  }
+  &__button-wrap {
+    width: 90%;
+  }
+}
+

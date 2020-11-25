@@ -1,0 +1,35 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.025rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  margin: 1rem;
+  border: none;
+  color: $white;
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &--primary {
+    background-color: $primary;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+    &:active {
+      transform: translateY(-0.2rem);
+    }
+  }
+}

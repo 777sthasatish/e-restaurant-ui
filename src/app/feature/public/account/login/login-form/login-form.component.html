@@ -1,0 +1,15 @@
+<form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="login()" class="login-form">
+  <div class="login-form__form-item">
+    <sd-h-dynamic-form-item [field]="username">
+      <input sdInput [formControlName]="username?.name" class="login-form__form-control">
+    </sd-h-dynamic-form-item>
+  </div>
+  <div class="login-form__form-item">
+    <sd-h-dynamic-form-item [field]="password">
+      <input sdInput [formControlName]="password?.name" class="login-form__form-control" type="password">
+    </sd-h-dynamic-form-item>
+  </div>
+  <div class="login-form__button-wrap">
+    <button type="submit" class="btn btn--primary">Login</button>
+  </div>
+</form>

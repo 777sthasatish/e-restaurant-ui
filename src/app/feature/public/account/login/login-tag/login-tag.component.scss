@@ -1,0 +1,36 @@
+
+@import '../../../../../../sass/abstracts/colors';
+
+$tag-background: $white;
+$tag-before-background: $black;
+
+ .login-tag-wrap {
+    filter: drop-shadow(0 0 3px rgba($primary, 0.15));
+  }
+  .login-tag {
+    padding: 4px;
+    width: 10rem;
+    height: 8rem;
+    background-color: $tag-background;
+    clip-path: polygon(50% 0%, 99% 30%, 100% 59%, 100% 100%, 0 100%, 0 60%, 1% 30%);
+    position: relative;
+    margin: auto;
+    &::before {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      background-color: $tag-before-background;
+      margin: auto;
+      border-radius: 50%;
+    }
+    &__title {
+      font-size: 3rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: $primary;
+    }
+  }
+

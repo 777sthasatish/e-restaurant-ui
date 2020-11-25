@@ -2,11 +2,16 @@ import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './service/interceptor/auth-interceptor.service';
+import { DynamicFormModule } from '@prajna10/sd_design';
+import { environment } from 'src/environments/environment';
+
+const baseURL = environment.baseURL;
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    DynamicFormModule.forRoot({url: `${baseURL}/public/fields`}),
     HttpClientModule
   ]
 })

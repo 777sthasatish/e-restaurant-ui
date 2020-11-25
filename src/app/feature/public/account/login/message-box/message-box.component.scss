@@ -1,0 +1,52 @@
+
+@import '../../../../../../sass/abstracts/variables';
+@import '../../../../../../sass/abstracts/colors';
+@import '../../../../../../sass/abstracts/mixins';
+
+
+$overlay-color: $verdun-green;
+$message-color: $dark-yellow;
+
+:host {
+  height: inherit;
+  position: absolute;
+}
+
+.message-box {
+  height: inherit;
+  &__image {
+    background-image: url("../../../../../../assets/img/burger.png");
+    width: $message-box-image-width;
+    height: inherit;
+    background-size: cover;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: rgba($overlay-color,  .75);
+      width: inherit;
+      height: inherit;
+    }
+  }
+  &__message {
+    width: 100%;
+    @include verticalCenter;
+
+  }
+  &__slogan, &__title {
+    color: $message-color;
+    text-align: center;
+  }
+  &__slogan {
+    &:nth-child(3) {
+      color: rgba($primary,  .75) ;
+    }
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__title {
+    font-size: 4rem;
+    margin-bottom: 3.5rem;
+  }
+}

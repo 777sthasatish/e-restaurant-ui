@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.0",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.0.0",
     "@angular/compiler": "~10.0.0",
     "@angular/core": "~10.0.0",
@@ -19,7 +20,9 @@
     "@angular/platform-browser": "~10.0.0",
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
+    "@prajna10/sd_design": "0.0.3",
     "rxjs": "~6.5.5",
+    "subsink": "^1.0.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
