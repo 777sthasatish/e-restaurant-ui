@@ -1,2 +1,8 @@
-<p>Secured Component</p>
-<router-outlet></router-outlet>
+<sd-grid [breakPoints]="grid">
+  <sd-grid-item [breakPoints]="sideBar" class="sidebar">Sidebar</sd-grid-item>
+
+  <sd-grid-item [breakPoints]="main" class="main">
+    <router-outlet></router-outlet>
+  </sd-grid-item>
+
+</sd-grid>
