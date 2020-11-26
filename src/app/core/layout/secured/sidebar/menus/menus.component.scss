@@ -33,4 +33,7 @@
 .active-menu {
   border-left: 4.8px solid $primary;
   box-shadow: 0 0 2px #cfcfcf;
+  svg, .menus__link {
+    color: $primary;
+  }
 }

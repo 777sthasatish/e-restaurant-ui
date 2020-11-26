@@ -4,7 +4,7 @@
   <li class="categories__item" *ngFor="let category of categories">
     <div [id]="category?.id" class="categories__name">{{category?.name}}</div>
     <ul class="food-menus">
-      <li class="food-menus__item" *ngFor="let menu of category.menus">
+      <li class="food-menus__item" (click)="toggleModal(true); onMenuSelect(menu)" *ngFor="let menu of category.menus">
         <div class="food-menus__price">NRs.{{menu?.price}}</div>
         <div class="food-menus__name">{{menu?.name}}</div>
         <div class="food-menus__prep-time">Ready in {{menu?.prepTime}}</div>
@@ -12,3 +12,7 @@
     </ul>
   </li>
 </ul>
+
+<app-modal-dialog (closeModal)="toggleModal($event)" [showDialog]="showDialog">
+  <ng-content></ng-content>
+</app-modal-dialog>

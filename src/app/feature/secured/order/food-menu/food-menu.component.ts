@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { FoodCategory } from '../model/food-category';
+import { FoodMenu } from '../model/food-menu';
 
 @Component({
   selector: 'app-food-menu',
@@ -13,6 +14,11 @@ export class FoodMenuComponent implements OnInit, OnChanges {
 
   @Input() scrollTo: string;
 
+  @Output() menuSelect = new EventEmitter<FoodMenu>();
+
+
+  showDialog: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +28,14 @@ export class FoodMenuComponent implements OnInit, OnChanges {
     if (this.scrollTo) {
       document.getElementById(this.scrollTo).scrollIntoView({behavior: 'smooth'});
     }
+  }
+
+  toggleModal(value: boolean): void {
+    this.showDialog = value;
+  }
+
+  onMenuSelect(foodMenu: FoodMenu): void {
+    this.menuSelect.emit(foodMenu);
   }
 
 }

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModalDialogComponent } from './component/modal-dialog/modal-dialog.component';
 
 
+const EXPORTED_DECLAREABLES = [ModalDialogComponent];
 @NgModule({
-  declarations: [],
+  declarations: EXPORTED_DECLAREABLES,
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: EXPORTED_DECLAREABLES
 })
 export class SharedModule { }

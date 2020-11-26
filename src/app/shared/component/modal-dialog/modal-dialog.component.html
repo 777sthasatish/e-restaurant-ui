@@ -1,0 +1,5 @@
+<div *ngIf="showDialog" (click)="closeDialog()" class="modal-dialog-wrapper">
+  <div class="modal-dialog" (click) = "stopPropagation($event)">
+    <ng-content></ng-content>
+  </div>
+</div>

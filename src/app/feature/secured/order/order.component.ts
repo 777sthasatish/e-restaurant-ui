@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BreakPoints, Grid, GridItem } from '@prajna10/sd_design';
 import { Observable } from 'rxjs';
 import { FoodCategory } from './model/food-category';
+import { FoodMenu } from './model/food-menu';
 
-import { FoodMenuService } from './sevice/food-menu.service';
+import { FoodMenuService } from './service/food-menu.service';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -18,6 +19,7 @@ export class OrderComponent implements OnInit {
 
   $foodCategory: Observable<FoodCategory[]>;
   scrollTo: string;
+  menu: FoodMenu;
 
 
   constructor(private foodMenuService: FoodMenuService) { }
@@ -74,5 +76,9 @@ export class OrderComponent implements OnInit {
 
   onCategorySelect(categoryId: string): void {
     this.scrollTo = categoryId;
+  }
+
+  onMenuSelect(menu: FoodMenu): void {
+    this.menu = menu;
   }
 }

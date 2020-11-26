@@ -1,0 +1,17 @@
+@import '../../../../sass/abstracts/colors';
+@import '../../../../sass/abstracts/mixins';
+
+
+.modal-dialog-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba($color: $black, $alpha: 0.6);
+}
+
+.modal-dialog {
+  @include absCenter;
+}

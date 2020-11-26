@@ -1,5 +1,6 @@
 export const APIUrl = {
   loginURL: 'public/login',
   menuURL: 'menus',
-  foodMenuURL: 'foodsMenu'
+  foodMenuURL: 'foodsMenu',
+  tableURL: 'tables'
 };
