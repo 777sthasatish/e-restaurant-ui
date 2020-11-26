@@ -1,3 +1,5 @@
+@import '../../../../../../sass/abstracts/colors';
+
 .list-unstyled {
   position: relative;
   top: 20%;
@@ -13,8 +15,8 @@
   cursor: pointer;
   outline: none;
   &:hover:not(.active-menu) {
-    border-left: 4.8px solid #4a5a73;
-    box-shadow: 0 0 2px #cfcfcf;
+    border-left: 4.8px solid $dark-border;
+    box-shadow: 0 0 2px $light-border;
   }
   &__link {
     display: flex;
@@ -27,4 +29,8 @@
     font-size: 2rem;
     color: #575757;
   }
+}
+.active-menu {
+  border-left: 4.8px solid $primary;
+  box-shadow: 0 0 2px #cfcfcf;
 }
