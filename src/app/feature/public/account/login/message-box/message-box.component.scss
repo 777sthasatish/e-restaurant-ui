@@ -36,6 +36,7 @@ $message-color: $dark-yellow;
   &__slogan, &__title {
     color: $message-color;
     text-align: center;
+    font-size: 2.5rem;
   }
   &__slogan {
     &:nth-child(3) {
