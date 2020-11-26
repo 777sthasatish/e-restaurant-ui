@@ -1,13 +1,13 @@
 
 
 <sd-grid [breakPoints] = "grid">
-  <sd-grid-item [breakPoints] ="searchBar">
-    <app-food-search></app-food-search>
+  <sd-grid-item class="sticky" [breakPoints] ="searchBar">
+    <!-- <app-food-search></app-food-search> -->
   </sd-grid-item>
   <sd-grid-item  [breakPoints] ="category">
-    <app-food-category></app-food-category>
+    <app-food-category (categorySelect)="onCategorySelect($event)" class="sticky" [categories]="$foodCategory | async"></app-food-category>
   </sd-grid-item>
-  <sd-grid-item  [breakPoints] ="foodMenu">
-    <app-food-menu></app-food-menu>
+  <sd-grid-item [breakPoints] ="foodMenu">
+    <app-food-menu [scrollTo]="scrollTo" [categories]="$foodCategory | async"></app-food-menu>
   </sd-grid-item>
 </sd-grid>

@@ -1,3 +1,9 @@
 .search-bar {
   margin-top: 1rem;
+  position: sticky;
+    top: 3.2rem;
+    padding: 0.75rem 0;
+    margin-top: -0.75rem;
+    z-index: 1;
+    overflow-y: auto;
 }

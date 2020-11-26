@@ -1,61 +1,14 @@
 
 
 <ul class="categories">
-  <li class="categories__item">
-    <div class="categories__name">MoMo</div>
+  <li class="categories__item" *ngFor="let category of categories">
+    <div [id]="category?.id" class="categories__name">{{category?.name}}</div>
     <ul class="food-menus">
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
+      <li class="food-menus__item" *ngFor="let menu of category.menus">
+        <div class="food-menus__price">NRs.{{menu?.price}}</div>
+        <div class="food-menus__name">{{menu?.name}}</div>
+        <div class="food-menus__prep-time">Ready in {{menu?.prepTime}}</div>
       </li>
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li>
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li> <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li> <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li> <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li> <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li>
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li>
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li>
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li>
-      <li class="food-menus__item">
-        <div class="food-menus__price">NRs.120</div>
-        <div class="food-menus__name">MoMo</div>
-        <div class="food-menus__prep-time">Ready in 10 min</div>
-      </li>
-
     </ul>
   </li>
 </ul>

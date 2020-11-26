@@ -1,52 +1,7 @@
 <sd-list-items>
-  <sd-list-item sdItem >
+  <sd-list-item (itemSelect)="onItemSelect(category)" sdItem *ngFor="let category of categories">
     <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
-    </div>
-  </sd-list-item>
-  <sd-list-item sdItem >
-    <div sdTitle>
-      Item
+      {{category?.name}}
     </div>
   </sd-list-item>
 </sd-list-items>

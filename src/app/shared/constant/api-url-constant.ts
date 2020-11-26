@@ -1,4 +1,5 @@
 export const APIUrl = {
   loginURL: 'public/login',
-  menuURL: 'menus'
-}
+  menuURL: 'menus',
+  foodMenuURL: 'foodsMenu'
+};

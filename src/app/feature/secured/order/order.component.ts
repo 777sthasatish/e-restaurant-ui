@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakPoints, Grid, GridItem } from '@prajna10/sd_design';
+import { Observable } from 'rxjs';
+import { FoodCategory } from './model/food-category';
 
+import { FoodMenuService } from './sevice/food-menu.service';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -13,11 +16,16 @@ export class OrderComponent implements OnInit {
   category: BreakPoints<GridItem>;
   foodMenu: BreakPoints<GridItem>;
 
-  constructor() { }
+  $foodCategory: Observable<FoodCategory[]>;
+  scrollTo: string;
+
+
+  constructor(private foodMenuService: FoodMenuService) { }
 
   ngOnInit(): void {
     this.initGrid();
     this.initGridItems();
+    this.initFoodCategory();
   }
 
   initGrid(): void {
@@ -57,7 +65,14 @@ export class OrderComponent implements OnInit {
       default: {
         column: 'full-start / full-end'
       }
-    }
+    };
    }
 
+  initFoodCategory(): void {
+    this.$foodCategory = this.foodMenuService.getAll();
+  }
+
+  onCategorySelect(categoryId: string): void {
+    this.scrollTo = categoryId;
+  }
 }
