@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://127.0.0.1:8080/api/v1'
+  baseURL: 'https://127.0.0.1:8080/api/v1'
 };
 
 /*

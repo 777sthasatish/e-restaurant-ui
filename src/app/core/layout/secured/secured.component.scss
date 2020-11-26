@@ -1,7 +1,4 @@
-.sidebar {
-  background-color: rebeccapurple
-}
 
-.main {
-  background-color: green;
+::ng-deep sd-side-bar-nav aside {
+  width: inherit !important;
 }

@@ -1,0 +1,16 @@
+.sidebar {
+  background-color: white;
+  height: 100%;
+  &::before {
+    content: "";
+    display: block;
+    width: 0.1px;
+    height: 100%;
+    box-shadow: 1px 0 3px 0 #cfcfcf;
+    float: right;
+  }
+}
+
+.minify {
+  width: 7rem;
+}

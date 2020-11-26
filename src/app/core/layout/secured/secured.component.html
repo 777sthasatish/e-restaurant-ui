@@ -1,5 +1,7 @@
 <sd-grid [breakPoints]="grid">
-  <sd-grid-item [breakPoints]="sideBar" class="sidebar">Sidebar</sd-grid-item>
+  <sd-grid-item [breakPoints]="sideBar" class="sidebar">
+    <app-sidebar></app-sidebar>
+  </sd-grid-item>
 
   <sd-grid-item [breakPoints]="main" class="main">
     <router-outlet></router-outlet>

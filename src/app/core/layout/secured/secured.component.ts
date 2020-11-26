@@ -13,7 +13,9 @@ export class SecuredComponent implements OnInit {
   header: BreakPoints<GridItem>;
   breadcrumb: BreakPoints<GridItem>;
   main: BreakPoints<GridItem>;
+
   constructor() { }
+
   ngOnInit(): void {
     this.initGrid();
     this.initGridItems();

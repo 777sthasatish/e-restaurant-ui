@@ -1,0 +1,17 @@
+<ul class="list-unstyled components">
+  <ng-container *ngFor="let menu of $menus | async">
+    <li class="menus" [routerLink]="menu?.path" routerLinkActive="active-menu">
+      <a class="menus__link">
+        <em [ngClass]="menu?.icon"></em>
+        <span>{{menu?.name}}</span>
+      </a>
+    </li>
+  </ng-container>
+
+  <li class="menus" (click)="onLogOutClick()" >
+    <a class="menus__link">
+      <em class="fas fa-sign-out-alt"></em>
+      <span>Sign out</span>
+    </a>
+  </li>
+</ul>
