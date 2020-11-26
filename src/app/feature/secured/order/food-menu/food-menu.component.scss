@@ -1,0 +1,56 @@
+@import '../../../../../sass/abstracts/colors';
+
+.categories {
+  list-style: none;
+  padding: 4rem;
+  &__name {
+    border: 1px solid $light-border;
+    text-align: center;
+    padding: 1rem;
+    font-size: 2.5rem;
+    width: 50%;
+    margin: 0 auto 3rem auto;
+    color: $dark-blue;
+  }
+}
+
+.food-menus {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    border: 1px solid $light-border;
+    padding: 4rem;
+    margin: 4rem;
+    position: relative;
+    text-align: center;
+    transition: all 200ms;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 1rem rgba($color: $black, $alpha: 0.1);
+    }
+  }
+  &__price {
+    width: min-content;
+    font-size: 1.4rem;
+    color: $white;
+    position: absolute;
+    height: 5rem;
+    padding: 4px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 71%, 0 100%);
+    background: $primary-dark;
+    top: -1rem;
+    right: 0;
+    transform: translateX(50%);
+  }
+  &__name {
+    color: $dark-blue;
+    font-size: 2rem;
+    margin-bottom: 3px;
+  }
+  &__prep-time {
+    color: $info;
+    font-size: 1.4rem;
+  }
+}
