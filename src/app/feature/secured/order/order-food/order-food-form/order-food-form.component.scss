@@ -1,0 +1,12 @@
+.order-form {
+  margin-top: 4rem;
+  &__form-item {
+    margin-bottom: 4rem;
+  }
+  &__button {
+    width: 92%;
+    padding: 1.3rem;
+    display: block;
+    margin: auto;
+  }
+}

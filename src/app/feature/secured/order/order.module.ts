@@ -10,9 +10,9 @@ import { FoodSearchComponent } from './food-search/food-search.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { OrderFoodComponent } from './order-food/order-food.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { OrderFoodFormComponent } from './order-food/order-food-form/order-food-form.component';
 @NgModule({
-  declarations: [OrderComponent, FoodMenuComponent, FoodCategoryComponent, FoodSearchComponent, OrderFoodComponent],
+  declarations: [OrderComponent, FoodMenuComponent, FoodCategoryComponent, FoodSearchComponent, OrderFoodComponent, OrderFoodFormComponent],
   imports: [
     CommonModule,
     GridModule,

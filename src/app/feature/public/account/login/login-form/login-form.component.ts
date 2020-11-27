@@ -15,12 +15,9 @@ import { RouteConstant } from 'src/app/shared/constant/route-constant';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit, OnDestroy {
+export class LoginFormComponent implements OnInit {
 
-  username: Field;
-  password: Field;
   formGroup: FormGroup;
-  subSink = new SubSink();
 
   constructor(
     private router: Router,
@@ -33,11 +30,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   }
 
   initForm(): void {
-    this.subSink.sink = this.formService.buildForm()
-      .subscribe(({ fields, formGroup }) => {
-        [this.username, this.password] = fields;
-        this.formGroup = formGroup;
-      });
+    this.formGroup = this.formService.buildForm();
   }
 
   login(): void {
@@ -46,9 +39,5 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         this.storageService.set('accessToken', token.access_token);
         this.router.navigate([RouteConstant.dashboardFull]);
       });
-  }
-
-  ngOnDestroy(): void {
-    this.subSink.unsubscribe();
   }
 }

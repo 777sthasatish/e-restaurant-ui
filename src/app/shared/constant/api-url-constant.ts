@@ -2,5 +2,6 @@ export const APIUrl = {
   loginURL: 'public/login',
   menuURL: 'menus',
   foodMenuURL: 'foodsMenu',
-  tableURL: 'tables'
+  tableURL: 'tables',
+  orderURL: 'orders'
 };

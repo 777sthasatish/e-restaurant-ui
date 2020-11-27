@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { FoodMenu } from '../model/food-menu';
-import { Table } from '../model/table';
+import { Order } from '../model/order';
 
-import { TableService } from '../service/table.service';
-
+import { OrderService } from './service/order.service';
 @Component({
   selector: 'app-order-food',
   templateUrl: './order-food.component.html',
@@ -14,32 +11,16 @@ import { TableService } from '../service/table.service';
 export class OrderFoodComponent implements OnInit {
 
   @Input() foodMenu: FoodMenu;
+  @Input() showModal: boolean;
 
-  tables: Table[];
-  tableNos: string[];
-
-  constructor(private tableService: TableService) { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.initTables();
   }
 
-  initTables(): void {
-    this.tableService.getAll()
-      .subscribe((tables: Table[]) => {
-        this.tables = tables;
-        this.tableNos = this.tables.map(table => table.tableNo);
-      });
-  }
-
-  search = (text$: Observable<string>) => {
-    return text$.pipe(
-      switchMap(text => {
-        if (!text) {
-          return of(this.tableNos);
-        }
-        return of(this.tableNos
-          .filter(tableNo => tableNo.toLowerCase().includes(text.toLowerCase())));
-      }));
+  addOrder(orderValue: Order): void {
+    orderValue.foodMenu = this.foodMenu;
+    this.orderService.addOrder(orderValue)
+      .subscribe(console.log);
   }
 }

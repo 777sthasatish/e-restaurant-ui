@@ -1,22 +1,5 @@
 <div class="order-food">
   <sd-item-label [title]="foodMenu?.name">
   </sd-item-label>
-
-  <form class="order-form">
-    <div class="order-form__form-item">
-      <sd-h-form-item>
-        <input id="typeahead-focus" sdInput placeholder="Order table number" class="order-form__form-control input"   #instance="ngbTypeahead" [ngbTypeahead]="search">
-      </sd-h-form-item>
-    </div>
-
-    <div class="order-form__form-item">
-      <sd-h-form-item>
-        <input sdInput type="number" placeholder="Quantity" class="order-form__form-control input ">
-      </sd-h-form-item>
-    </div>
-
-    <button class="order-form__button btn btn--primary">
-      Order
-    </button>
-  </form>
+  <app-order-food-form [showModal]="showModal" (orderSubmit)="addOrder($event)"></app-order-food-form>
 </div>

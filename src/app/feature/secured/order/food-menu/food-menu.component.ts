@@ -14,10 +14,12 @@ export class FoodMenuComponent implements OnInit, OnChanges {
 
   @Input() scrollTo: string;
 
+  @Input() showDialog: boolean;
+
+
   @Output() menuSelect = new EventEmitter<FoodMenu>();
 
-
-  showDialog: boolean;
+  @Output() closeModal = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -32,10 +34,10 @@ export class FoodMenuComponent implements OnInit, OnChanges {
 
   toggleModal(value: boolean): void {
     this.showDialog = value;
+    this.closeModal.emit(value);
   }
 
   onMenuSelect(foodMenu: FoodMenu): void {
     this.menuSelect.emit(foodMenu);
   }
-
 }

@@ -1,0 +1,19 @@
+<form *ngIf="formGroup" (ngSubmit) ="onSubmit()" [formGroup]="formGroup" class="order-form">
+  <div class="order-form__form-item">
+    <sd-h-dynamic-form-item [field]="tableNo">
+      <input (blur) ="onTableNoBlur($event?.target?.value)" id="typeahead-focus" [formControlName]="tableNo?.name" sdInput placeholder="Order table number"
+        class="order-form__form-control input" (focus)="focus$.next($any($event).target.value)"
+        (click)="click$.next($any($event).target.value)" [ngbTypeahead]="search">
+    </sd-h-dynamic-form-item>
+  </div>
+
+  <div class="order-form__form-item">
+    <sd-h-dynamic-form-item [field]="quantity">
+      <input sdInput type="number" [formControlName]="quantity?.name" placeholder="Quantity" class="order-form__form-control input ">
+    </sd-h-dynamic-form-item>
+  </div>
+
+  <button type="submit" class="order-form__button btn btn--primary">
+    Order
+  </button>
+</form>

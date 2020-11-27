@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DynamicFormService, FieldsWithGroup } from '@prajna10/sd_design';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { LoginFieldKeys } from '../enum/login-field-keys';;
 
@@ -9,10 +8,10 @@ import { LoginFieldKeys } from '../enum/login-field-keys';;
 })
 export class LoginFormService {
 
-  constructor(private dynamicFormService: DynamicFormService) { }
+  constructor(private formBuilder: FormBuilder) { }
 
-  buildForm(): Observable<FieldsWithGroup> {
-    return this.dynamicFormService.formGroup({
+  buildForm(): FormGroup {
+    return this.formBuilder.group({
       [LoginFieldKeys.username]: null,
       [LoginFieldKeys.password]: null
     });

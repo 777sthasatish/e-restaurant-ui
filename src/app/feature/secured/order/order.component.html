@@ -7,8 +7,8 @@
     <app-food-category (categorySelect)="onCategorySelect($event)" class="sticky" [categories]="$foodCategory | async"></app-food-category>
   </sd-grid-item>
   <sd-grid-item [breakPoints] ="foodMenu">
-    <app-food-menu [scrollTo]="scrollTo" (menuSelect)="onMenuSelect($event)" [categories]="$foodCategory | async">
-      <app-order-food [foodMenu]="menu"></app-order-food>
+    <app-food-menu [scrollTo]="scrollTo" (closeModal)="onModalClose($event)" (menuSelect)="onMenuSelect($event)" [categories]="$foodCategory | async">
+      <app-order-food [showModal]="showModal" [foodMenu]="menu"></app-order-food>
     </app-food-menu>
   </sd-grid-item>
 </sd-grid>

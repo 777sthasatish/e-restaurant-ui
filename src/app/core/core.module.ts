@@ -11,7 +11,7 @@ const baseURL = environment.baseURL;
   declarations: [],
   imports: [
     CommonModule,
-    DynamicFormModule.forRoot({url: `${baseURL}/public/fields`}),
+    DynamicFormModule.forRoot({url: `${baseURL}/activeFields`}),
     HttpClientModule
   ]
 })

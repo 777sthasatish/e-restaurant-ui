@@ -20,6 +20,7 @@ export class OrderComponent implements OnInit {
   $foodCategory: Observable<FoodCategory[]>;
   scrollTo: string;
   menu: FoodMenu;
+  showModal: boolean;
 
 
   constructor(private foodMenuService: FoodMenuService) { }
@@ -80,5 +81,9 @@ export class OrderComponent implements OnInit {
 
   onMenuSelect(menu: FoodMenu): void {
     this.menu = menu;
+  }
+
+  onModalClose(value: boolean): void {
+    this.showModal = value;
   }
 }

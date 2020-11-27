@@ -71,7 +71,7 @@ export class HttpClientService {
   patch<T, R>(url: string, body: T | null, httpParams?: Params): Observable<R> {
     return this.httpClient
       .patch<R>(`${this._baseURL}/${url}`, body, { ...this._options, params: httpParams })
-      .pipe(retry(this._retryCount));;
+      .pipe(retry(this._retryCount));
   }
 
   delete<T, R>(url: string, httpParams?: Params): Observable<R> {
