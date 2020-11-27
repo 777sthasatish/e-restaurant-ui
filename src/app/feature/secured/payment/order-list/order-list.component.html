@@ -1,0 +1,10 @@
+<sd-list-items>
+  <sd-list-item [active]="activeItem === order" (itemSelect)="onItemSelect(order)" sdItem *ngFor="let order of orders">
+    <h3 sdTitle>
+      {{order?.table?.tableNo}}
+    </h3>
+    <div sdSubInfo class="list-sub-info">
+      Total: NRs.{{order?.billing?.total}}
+    </div>
+  </sd-list-item>
+</sd-list-items>

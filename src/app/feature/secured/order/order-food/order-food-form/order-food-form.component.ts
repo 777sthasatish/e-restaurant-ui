@@ -89,11 +89,15 @@ export class OrderFoodFormComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onSubmit(): void {
-    const tableNo = this.controls(OrderForm.tableNo).value;
-    const total = this.controls(OrderForm.quantity).value;
-    const table: Table = this.tables.find(value => value.tableNo === tableNo);
-    this.onModalToggle(false);
-    this.orderSubmit.emit({ table, quantity: total });
+    if (this.formGroup.valid) {
+      const tableNo = this.controls(OrderForm.tableNo).value;
+      const total = this.controls(OrderForm.quantity).value;
+      const table: Table = this.tables.find(value => value.tableNo === tableNo);
+      this.onModalToggle(false);
+      this.orderSubmit.emit({ table, quantity: total });
+    } else {
+      this.formGroup.markAllAsTouched();
+    }
   }
 
   ngOnDestroy(): void {

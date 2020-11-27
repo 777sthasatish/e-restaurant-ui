@@ -1,1 +1,12 @@
-<p>payment works!</p>
+<sd-grid *ngIf="orders && orders.length" [breakPoints]="grid">
+  <sd-grid-item [breakPoints]="orderGridItem">
+    <app-order-list (itemSelect)="initDataSource($event?.table?.id)"  [orders]="orders"></app-order-list>
+  </sd-grid-item>
+  <sd-grid-item [breakPoints]="paymentGridItem">
+    <app-payment-summary (checkout)="checkout($event)" [dataSource] = "dataSource"></app-payment-summary>
+  </sd-grid-item>
+</sd-grid>
+
+<h1 *ngIf="orders && !orders.length"  class="no-data">
+  No pending payment
+</h1>

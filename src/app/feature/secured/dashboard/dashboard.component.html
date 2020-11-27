@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+<div class="dashboard-wrapper">
+  <div class="total-orders dashboard-card">
+    <h1 class="total-orders__count heading-1">{{dashboardMetrics?.totalOrders}}</h1>
+    <h3 class="total-orders__label heading-3">Today's Orders</h3>
+  </div>
+
+  <div class="pending-payments dashboard-card">
+    <h1 class="pending-payments__count heading-1">{{dashboardMetrics?.pendingPayments}}</h1>
+    <h3 class="pending-payments__label heading-3">Pending Payments</h3>
+  </div>
+
+  <div class="today-revenue dashboard-card">
+    <h1 class="total-orders__amount heading-1">NRs. {{dashboardMetrics?.todaysRevenue}}</h1>
+    <h3 class="total-orders__label heading-3">Today's Revenue</h3>
+  </div>
+
+  <div class="max-sold-menu dashboard-card">
+    <h1 class="max-sold-menu__name heading-1">{{dashboardMetrics?.maxSoldFood}}</h1>
+    <h3 class="max-sold-menu__label heading-3">Max Sold Item</h3>
+  </div>
+</div>
+

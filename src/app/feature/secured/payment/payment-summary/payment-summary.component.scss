@@ -1,0 +1,22 @@
+.payment-table {
+  width: 100%;
+  margin-bottom: 3rem;
+  &__data-row {
+    height: 4rem;
+  }
+  &__data-row {
+    height: 5rem;
+  }
+}
+
+.checkout {
+  width: 40rem;
+  float: right;
+  &__button {
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    display: block;
+  }
+}

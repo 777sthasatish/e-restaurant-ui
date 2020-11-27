@@ -1,0 +1,35 @@
+@import "../../../../sass/abstracts/colors";
+
+.dashboard-wrapper {
+  display: flex;
+}
+
+.dashboard-card {
+  height: 10rem;
+  position: relative;
+  flex: 1;
+  background-color: $white;
+  box-shadow: 0 0 1.5rem rgba($color: $black, $alpha: 0.1);
+  padding: 1rem;
+  text-align: center;
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+}
+
+
+.heading-1 {
+  color: $primary-dark;
+  font-weight: 400;
+  font-size: 3.5rem;
+}
+
+.heading-3 {
+  color: $info;
+  font-weight: 100;
+  font-size: 2rem;
+}
+
+.max-sold-menu {
+  flex: 1.3;
+}

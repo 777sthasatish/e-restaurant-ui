@@ -3,5 +3,7 @@ export const APIUrl = {
   menuURL: 'menus',
   foodMenuURL: 'foodsMenu',
   tableURL: 'tables',
-  orderURL: 'orders'
+  orderURL: 'orders',
+  checkOutURL: 'checkout',
+  dashboardURL: 'dashboard'
 };

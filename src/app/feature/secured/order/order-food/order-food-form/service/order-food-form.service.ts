@@ -14,6 +14,6 @@ export class OrderFoodFormService {
     return this.dynamicFormService.formGroup({
       [OrderForm.tableNo]: null,
       [OrderForm.quantity]: null
-    });
+    }, 'blur');
   }
 }

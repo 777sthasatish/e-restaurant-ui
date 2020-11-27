@@ -4,6 +4,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './service/interceptor/auth-interceptor.service';
 import { DynamicFormModule } from '@prajna10/sd_design';
 import { environment } from 'src/environments/environment';
+import { ToastrModule } from 'ngx-toastr';
+import { ErrorInterceptor } from './service/interceptor/error-interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const baseURL = environment.baseURL;
 
@@ -12,7 +15,10 @@ const baseURL = environment.baseURL;
   imports: [
     CommonModule,
     DynamicFormModule.forRoot({url: `${baseURL}/activeFields`}),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      preventDuplicates: true})
   ]
 })
 export class CoreModule {
@@ -29,7 +35,9 @@ export class CoreModule {
       providers: [
         {
           provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true
-        }
+
+        },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]
     };
   }

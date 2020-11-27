@@ -1,0 +1,23 @@
+<table class="payment-table" sd-table *ngIf="dataSource" [dataSource]="dataSource">
+  <tr class="payment-table__data-row" sd-hr sdHR>
+    <th sd-hc *sdHC = "let column of dataSource.columns">
+      {{column}}
+    </th>
+  </tr>
+  <tr class="payment-table__data-row" sd-dr *sdDR="let order; let sn = index ">
+    <td sd-dc>{{sn}}</td>
+    <td sd-dc>{{order?.table?.tableNo}}</td>
+    <td sd-dc>{{order?.foodMenu?.name}}</td>
+    <td sd-dc>{{order?.foodMenu?.price}}</td>
+    <td sd-dc>{{order?.quantity}}</td>
+    <td sd-dc>{{order?.foodMenu?.price * order?.quantity}}</td>
+  </tr>
+</table>
+
+<div class="checkout">
+  <div class="checkout__summary">
+    <sd-item-label [label]="'Grand Total'" [title]="grandTotal">
+    </sd-item-label>
+  </div>
+  <button (click)="onCheckout()" class="checkout__button btn btn--primary">Checkout</button>
+</div>
